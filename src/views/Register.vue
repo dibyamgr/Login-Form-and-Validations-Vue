@@ -233,7 +233,7 @@ $bg-color: #fafafa;
   .login-container {
     height: 100%;
     justify-content: center;
-    padding: 4rem;
+    padding: 3rem;
 
     .login-area {
       max-width: 90% !important;
