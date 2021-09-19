@@ -15,7 +15,7 @@ export default {
   name: "App",
 
   components: {
-    Login,
+    Login
   },
 
   data: () => ({
@@ -38,6 +38,10 @@ body {
 
 ul,ol{
   padding-left: 0!important;
+}
+
+.primary-text{
+  color: #fc913a;
 }
 
 

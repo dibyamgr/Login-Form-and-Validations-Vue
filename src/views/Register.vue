@@ -1,10 +1,10 @@
 <template>
   <v-app>
     <v-content>
-      <div class="login-wrapper">
+      <div class="register-wrapper">
         <v-container class="fill-height login-container">
           <v-row align="center" justify="center" class="login-area">
-            <!-- Login Form -->
+            <!-- Register Form -->
             <v-col cols="12" sm="12" md="6" class="login-area__left">
               <div class="login-form__wrapper">
                 <h4>Welcome to Criarme</h4>
@@ -16,8 +16,20 @@
                 >
                   <v-text-field
                     class="custom-text-field"
-                    v-model="loginEmail"
-                    :rules="loginEmailRules"
+                    v-model="name"
+                    :rules="[rules.required]"
+                    maxlength="20"
+                    label="Display Name"
+                    required
+                    outlined
+                    dense
+                    prepend-inner-icon="fa-user"
+                  ></v-text-field>
+
+                  <v-text-field
+                    class="custom-text-field"
+                    v-model="email"
+                    :rules="emailRules"
                     label="E-mail"
                     required
                     outlined
@@ -27,11 +39,25 @@
 
                   <v-text-field
                     class="custom-text-field"
-                    v-model="loginPassword"
+                    v-model="password"
                     :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
                     :type="show1 ? 'text' : 'password'"
                     :rules="[rules.required, rules.min]"
                     label="Password"
+                    required
+                    outlined
+                    dense
+                    prepend-inner-icon="fa-lock"
+                    @click:append="show1 = !show1"
+                  ></v-text-field>
+
+                  <v-text-field
+                    class="custom-text-field"
+                    v-model="verify"
+                    :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
+                    :type="show1 ? 'text' : 'password'"
+                    :rules="[rules.required, passwordMatch]"
+                    label="Confirm Password"
                     required
                     outlined
                     dense
@@ -53,7 +79,7 @@
                     rounded
                     @click="validate"
                   >
-                    Login
+                    Create an Account
                   </v-btn>
                 </v-form>
                 <!-- Signup Options -->
@@ -95,6 +121,15 @@
                     </li>
                   </ul>
                 </div>
+                <!-- Already have an account? Login Here -->
+                <div class="mt-3">
+                  <p class="login-link">
+                    Already have an account ?
+                    <a href="#" class="primary-text">
+                      Login Here
+                    </a>
+                  </p>
+                </div>
               </div>
             </v-col>
             <!-- Login Screen -->
@@ -133,7 +168,7 @@ export default {
   },
   data: () => ({
     valid: true,
-    
+
     name: "",
     email: "",
     password: "",
@@ -141,19 +176,19 @@ export default {
     loginPassword: "",
     loginEmail: "",
     loginEmailRules: [
-      v => !!v || "Required",
-      v => /.+@.+\..+/.test(v) || "E-mail must be valid"
+      (v) => !!v || "Required",
+      (v) => /.+@.+\..+/.test(v) || "E-mail must be valid",
     ],
     emailRules: [
-      v => !!v || "Required",
-      v => /.+@.+\..+/.test(v) || "E-mail must be valid"
+      (v) => !!v || "Required",
+      (v) => /.+@.+\..+/.test(v) || "E-mail must be valid",
     ],
 
     show1: false,
     rules: {
-      required: value => !!value || "Required.",
-      min: v => (v && v.length >= 8) || "Min 8 characters"
-    }
+      required: (value) => !!value || "Required.",
+      min: (v) => (v && v.length >= 8) || "Min 8 characters",
+    },
   }),
 
   methods: {
@@ -173,11 +208,12 @@ $bg-gradient: conic-gradient(
 $box-shadow: 0px 4px 16px #00000017;
 $bg-color: #fafafa;
 
-.register-wrapper{
-    height: auto!important;
+.register-wrapper {
+  height: auto !important;
 }
 
-.login-wrapper, .register-wrapper {
+.login-wrapper,
+.register-wrapper {
   position: relative;
   height: 100vh;
 
@@ -264,8 +300,6 @@ $bg-color: #fafafa;
             .v-input__slot {
               border-radius: 8px;
             }
-
-           
           }
 
           .v-input--selection-controls {
@@ -354,6 +388,10 @@ $bg-color: #fafafa;
         }
       }
     }
+  }
+
+  .login-link{
+    font-size: 13px;
   }
 }
 
