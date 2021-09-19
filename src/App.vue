@@ -2,20 +2,20 @@
   <v-app>
     <v-main>
       <router-view>
-        <Register />
+        <Login />
       </router-view>
     </v-main>
   </v-app>
 </template>
 
 <script>
-import Register from "./views/Register";
+import Login from "./views/Login";
 
 export default {
   name: "App",
 
   components: {
-    Register
+    Login
   },
 
   data: () => ({
