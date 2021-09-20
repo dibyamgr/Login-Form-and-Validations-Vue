@@ -125,7 +125,7 @@
                 <div class="mt-3">
                   <p class="login-link">
                     Already have an account ?
-                    <a href="#" class="primary-text">
+                    <a href="#" class="primary-text" @click="gotoLogin()">
                       Login Here
                     </a>
                   </p>
