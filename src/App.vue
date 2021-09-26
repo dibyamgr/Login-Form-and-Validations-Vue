@@ -2,20 +2,20 @@
   <v-app>
     <v-main>
       <router-view>
-        <Register />
+        <Dashboard />
       </router-view>
     </v-main>
   </v-app>
 </template>
 
 <script>
-import Register from "./views/Register";
+import Dashboard from "./views/Dashboard"
 
 export default {
   name: "App",
 
   components: {
-    Register
+    Dashboard
   },
 
   data: () => ({
