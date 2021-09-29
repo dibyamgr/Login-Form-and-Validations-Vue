@@ -1,10 +1,14 @@
 <template>
-    <div>
-        Dashboard
+    <div class="dashboard">
+        <DashHeader />
     </div>
 </template>
 <script>
+import DashHeader from "../components/dashboard/header/DashHeader"
 export default {
-    name: "Dashboard"
+    name: "Dashboard",
+    components: {
+        DashHeader
+    }
 }
 </script>
