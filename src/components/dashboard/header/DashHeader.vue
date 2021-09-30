@@ -44,6 +44,7 @@ export default {
   box-shadow: 0px 5px 21px -5px #cdd1e1;
   font-weight: 400;
   padding: 1rem 0;
+  background: #fff;
 
   .navbar {
     .navbar-brand-wrapper {
