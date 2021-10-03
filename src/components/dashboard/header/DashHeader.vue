@@ -15,12 +15,15 @@
               <span class="mdi mdi-bell-outline icon"></span>
             </v-badge>
           </div>
-          <v-avatar color="primary" size="38" class="dash-avatar">
-            <img
-              src="https://i.pinimg.com/originals/2e/89/8a/2e898af8c48ab1a3af5b370e5eb015e0.jpg"
-              alt=""
-            />
-          </v-avatar>
+          <div class="d-flex align-center">
+            <v-avatar color="primary" size="38" class="dash-avatar mr-2">
+              <img
+                src="https://i.pinimg.com/originals/2e/89/8a/2e898af8c48ab1a3af5b370e5eb015e0.jpg"
+                alt=""
+              />
+            </v-avatar>
+            <span>Marco Valentina</span>
+          </div>
         </div>
       </v-row>
     </v-container>
@@ -64,11 +67,10 @@ export default {
       }
     }
 
-
-    .notifications{
-        .icon{
-            font-size: 1.5rem;
-        }
+    .notifications {
+      .icon {
+        font-size: 1.5rem;
+      }
     }
   }
 }
