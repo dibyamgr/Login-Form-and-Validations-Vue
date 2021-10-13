@@ -10,8 +10,14 @@
           </a>
         </div>
         <div class="d-flex align-center">
+          <div class="mr-8">
+            <a href="" class="page-link">
+              My Page
+              <span class="mdi mdi-trending-up"></span>
+            </a>
+          </div>
           <div class="notifications mr-8">
-            <v-badge dot>
+            <v-badge overlap>
               <span class="mdi mdi-bell-outline icon"></span>
             </v-badge>
           </div>
@@ -22,7 +28,7 @@
                 alt=""
               />
             </v-avatar>
-            <span>Marco Valentina</span>
+            <span class="username">Marco Valentina</span>
           </div>
         </div>
       </v-row>
@@ -67,10 +73,23 @@ export default {
       }
     }
 
+    .username {
+      font-size: 12px;
+    }
+
     .notifications {
       .icon {
         font-size: 1.5rem;
       }
+    }
+
+    .page-link {
+      background: #58a2cc;
+      color: #fff;
+      padding: 6px 22px;
+      font-size: 14px;
+      border-radius: 4px;
+      text-decoration: none;
     }
   }
 }
