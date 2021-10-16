@@ -40,6 +40,12 @@ export default {
 };
 </script>
 <style lang="scss">
+.primary-btn {
+  background-color: $primary-color;
+  box-shadow: $primary-box-shadow;
+  border-radius: 3px;
+}
+
 .fixed-top {
   position: fixed;
   top: 0;
