@@ -10,11 +10,10 @@
           </a>
         </div>
         <div class="d-flex align-center">
-          <div class="mr-8">
-            <a href="" class="page-link">
-              My Page
-              <span class="mdi mdi-trending-up"></span>
-            </a>
+          <div class="add-post mr-4">
+            <button class="primary-btn">
+              <span class="mdi mdi-plus"></span>
+            </button>
           </div>
           <div class="notifications mr-8">
             <v-badge overlap>
